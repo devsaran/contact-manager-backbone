@@ -1,0 +1,14 @@
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+
+@import 'sass-bootstrap/lib/bootstrap';
+
+body {
+  padding-top: 20px;
+}
+
+.footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 40px;
+  border-top: 1px solid #eee;
+}
