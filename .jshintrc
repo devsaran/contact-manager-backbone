@@ -21,7 +21,7 @@
     "jquery": true,
     "globals": {
         "ContactManagerBackbone": true,
-        "contactmanagerbackbone": true,
+        "contact-manager-backbone": true,
         "_": false,
         "Backbone": false,
         "JST": false,

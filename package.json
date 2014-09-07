@@ -1,6 +1,6 @@
 {
-  "name": "contactmanagerbackbone",
-  "version": "0.0.0",
+  "name": "contact-manager-backbone",
+  "version": "1.0.0",
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
