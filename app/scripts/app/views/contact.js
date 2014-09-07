@@ -2,7 +2,7 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'app/template'
+  'app/template',
 ], function($, _, Backbone, Templates) {
 
   var ContactView = Backbone.View.extend({
@@ -26,7 +26,7 @@ define([
 
     onClickContactDelete: function(e) {
       e.preventDefault();
-      this.model.collection.remove(this.model);
+      this.model.destroy();
     }
   });
 

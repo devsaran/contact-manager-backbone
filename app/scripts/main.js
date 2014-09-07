@@ -38,5 +38,6 @@ require.config({
 require([
     'app/app'
 ], function (MainApp) {
+    window.App = {};
     MainApp.initialize();
 });

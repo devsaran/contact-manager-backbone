@@ -5,7 +5,7 @@ define([
   'app/template',
 ], function($, _, Backbone, Templates) {
 
-  var EditContactsView = Backbone.View.extend({
+  var EditContactView = Backbone.View.extend({
     template: Templates['contactEdit'],
 
     events: {
@@ -22,13 +22,14 @@ define([
 
     onFormSubmit: function(e) {
       e.preventDefault();
-      this.model.set({
+
+      this.trigger('form:submitted', {
         name: this.$('.contact-name-input').val(),
-        tel: this.$('.contact-tel-input').val(),
+        phone: this.$('.contact-phone-input').val(),
         email: this.$('.contact-email-input').val()
       });
     }
   });
 
-  return EditContactsView;
+  return EditContactView;
 });

@@ -13,7 +13,8 @@ define([
         '<input type="text" class="form-control contact-name-search" placeholder="Search">',
       '</div>',
     '</div>',
-    '<ul class="media-list row contacts-container"></ul>'
+    '<ul class="media-list row contacts-container"></ul>',
+    '<div class="empty-contacts-placeholder"></div>'
   ].join('');
 
   Templates['contact'] =  [
@@ -55,7 +56,7 @@ define([
         '<div class="form-group">',
           '<label class="col-sm-4 control-label">Telephone number:</label>',
           '<div class="col-sm-6">',
-            '<input type="tel" class="form-control contact-tel-input" value="{{phone}}">',
+            '<input type="tel" class="form-control contact-phone-input" value="{{phone}}">',
           '</div>',
         '</div>',
         '<div class="form-group">',

@@ -1,12 +1,16 @@
 define([
   'backbone',
   'app/views/app',
-  'app/router'
-], function (Backbone, AppView, Router) {
+  'app/router',
+  'app/collections/contacts'
+], function (Backbone, AppView, Router, ContactsCollection) {
 
   var initialize = function() {
-    var appView = new AppView();
-    var router = new Router(appView);
+    var contactsCollections = new ContactsCollection();
+    var appView = new AppView({
+      collection: contactsCollections
+    });
+    App.router = new Router(appView);
     Backbone.history.start();
   };
 
