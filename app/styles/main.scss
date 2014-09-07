@@ -20,6 +20,12 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
     color: #fff;
   }
 
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
   p {
     margin-bottom: 0;
     font-weight: 300;
@@ -27,6 +33,24 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
   }
 }
 
+.btn-outline {
+  color: #563d7c;
+  background-color: transparent;
+  border-color: #563d7c;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: #fff;
+    background-color: #563d7c;
+    border-color: #563d7c;
+  }
+}
+
+.contact-name-search {
+  width: 50%;
+  margin: 0 auto;
+}
 
 .footer {
   padding-top: 20px;

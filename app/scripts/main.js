@@ -3,6 +3,20 @@
 
 require.config({
     shim: {
+        underscore: {
+            exports: '_'
+        },
+        backbone: {
+            deps: [
+                'underscore',
+                'jquery'
+            ],
+            exports: 'Backbone'
+        },
+        localstorage: {
+            deps: ['backbone'],
+            exports: 'localstorage'
+        },
         bootstrap: {
             deps: ['jquery'],
             exports: 'jquery'
@@ -16,13 +30,13 @@ require.config({
         backbone: '../bower_components/backbone/backbone',
         underscore: '../bower_components/lodash/dist/lodash',
         bootstrap: '../bower_components/sass-bootstrap/dist/js/bootstrap',
-        handlebars: '../bower_components/handlebars/handlebars'
+        handlebars: '../bower_components/handlebars/handlebars',
+        localstorage: "../bower_components/backbone.localStorage/backbone.localStorage"
     }
 });
 
 require([
-    'backbone',
-    'bootstrap'
-], function (Backbone) {
-    Backbone.history.start();
+    'app/app'
+], function (MainApp) {
+    MainApp.initialize();
 });
