@@ -29,13 +29,13 @@ define([
         '<dt>Email:</dt><dd>{{email}}</dd>',
       '</dl>',
     '</div>',
-    '<div>',
-      '<a href="#contacts/edit/{{id}}" class="btn btn-outline"><span class="glyphicon glyphicon-pencil"></span> Edit</a>',
+    '<div class="contact-btn-wrapper">',
+      '<a href="#contacts/edit/{{id}}" class="edit-contact btn btn-outline"><span class="glyphicon glyphicon-pencil"></span> Edit</a>',
       '<a href="#contacts/delete/{{id}}" class="delete-contact btn btn-outline">',
         '<span class="glyphicon glyphicon-trash"></span> Delete',
       '</a>',
     '</div>',
-    '<hr>',
+    '<hr/>'
   ].join('');
 
   Templates['contactEdit'] =  [
@@ -67,7 +67,7 @@ define([
             '<a href="#" class="btn btn-outline btn-lg btn-block">Cancel</a>',
           '</div>',
         '</div>',
-      '</form>',
+      '</form>'
   ].join('');
 
   for (var tmpl in Templates) {

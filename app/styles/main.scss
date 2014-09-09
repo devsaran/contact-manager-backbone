@@ -47,6 +47,15 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
   }
 }
 
+.contact-btn-wrapper {
+  .btn {
+    margin: 0 10px;
+  }
+  .edit-contact {
+    margin-left: 0;
+  }
+}
+
 .contact-name-search {
   width: 50%;
   margin: 0 auto;

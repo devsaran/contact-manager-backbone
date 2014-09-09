@@ -48,6 +48,7 @@ define([
         }
       }
     }
+
   });
 
   return AppView;
