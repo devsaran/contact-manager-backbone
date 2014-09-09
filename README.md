@@ -1,8 +1,10 @@
 contact-manager-backbone
 ========================
 
-Contact Manager using Backbone.js
+Contact Manager using Backbone.js, Localstorage, RequireJS, Handlebar and Bootstrap.
 
+
+##[Online demo](http://devsaran.github.io/contact-manager-backbone/)
 
 ## Installation
 
@@ -21,3 +23,5 @@ Contact Manager using Backbone.js
 
 
 Copyright (c) 2014 Pradeep Saran. All rights reserved.
+
+Developed by [Devsaran](http://www.devsaran.com)
