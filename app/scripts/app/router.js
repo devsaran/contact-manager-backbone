@@ -10,6 +10,7 @@ define([
   var Router = Backbone.Router.extend({
     routes: {
       '': 'home',
+      'home': 'home',
       'contacts/new': 'newContact',
       'contacts/edit/:id': 'editContact'
     },
@@ -39,9 +40,11 @@ define([
         var modelError = newContact.save(attrs, {validate:true});
         if(modelError !== false) {
           this.collection.add(newContact);
-          App.router.navigate('', true);
+          App.router.navigate('home', true);
         }
       }, this);
+
+      createContactsView.on('form:close', this.contactFormClose);
     },
 
     editContact: function(id) {
@@ -54,9 +57,15 @@ define([
       editContactsView.on('form:submitted', function(attrs) {
         var modelError = contact.save(attrs, {validate:true});
         if(modelError !== false) {
-          App.router.navigate('', true);
+          App.router.navigate('home', true);
         }
       });
+
+      editContactsView.on('form:close', this.contactFormClose);
+    },
+
+    contactFormClose: function() {
+      App.router.navigate('home', true);
     }
 
   });

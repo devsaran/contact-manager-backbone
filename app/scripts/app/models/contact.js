@@ -8,10 +8,6 @@ define([
       phone: null,
       email: null
     },
-
-    destroy: function(){
-      this.collection.remove(this);
-    },
     
     validate: function (attrs) {
       var errors = [];

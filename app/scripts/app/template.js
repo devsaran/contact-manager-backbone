@@ -68,7 +68,7 @@ define([
             '<button type="submit" class="btn btn-outline btn-lg btn-block">Submit</button>',
           '</div>',
           '<div class="col-sm-3">',
-            '<a href="#" class="btn btn-outline btn-lg btn-block">Cancel</a>',
+            '<button class="btn-close-form btn btn-outline btn-lg btn-block">Cancel</button>',
           '</div>',
         '</div>',
       '</form>'

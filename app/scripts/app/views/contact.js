@@ -26,11 +26,9 @@ define([
 
     onClickContactDelete: function(e) {
       e.preventDefault();
-      var confirmDelete = window.confirm('Do you want to delete the contact');
+      var confirmDelete = window.confirm('Do you want to delete the contact ?');
       if(confirmDelete) {
         this.model.destroy();
-        this.unbind();
-        this.remove();
       }
     }
   });

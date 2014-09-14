@@ -16,7 +16,8 @@ define([
     },
 
     events: {
-      'submit .contact-form': 'onFormSubmit'
+      'submit .contact-form': 'onFormSubmit',
+      'click .btn-close-form': 'onFormClose'
     },
 
     render: function() {
@@ -45,6 +46,10 @@ define([
     cleanFormErrors: function() {
       this.$('.form-group').removeClass('has-error');
       this.$('.help-block').html('');
+    },
+
+    onFormClose: function() {
+      this.trigger('form:close');
     }
   });
 
