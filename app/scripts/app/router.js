@@ -36,11 +36,12 @@ define([
 
       createContactsView.on('form:submitted', function(attrs) {
         attrs.id = this.collection.isEmpty() ? 1 : (_.max(this.collection.pluck('id')) + 1);
-        var newContact = new ContactModel();
-        var modelError = newContact.save(attrs, {validate:true});
+        var newContact = new ContactModel(attrs);
+        var modelError = newContact.isValid();
         if(modelError !== false) {
           this.collection.add(newContact);
-          App.router.navigate('home', true);
+          newContact.save();
+          App.router.navigate('', true);
         }
       }, this);
 

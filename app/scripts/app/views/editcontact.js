@@ -31,12 +31,19 @@ define([
 
     onFormSubmit: function(e) {
       e.preventDefault();
-
-      this.trigger('form:submitted', {
+      var attrs = {
         name: this.$('.contact-name-input').val(),
         phone: this.$('.contact-phone-input').val(),
         email: this.$('.contact-email-input').val()
-      });
+      };
+        
+      if(this.model.isNew()) {
+        var error = this.model.validate(attrs);
+        this.cleanFormErrors();
+        _.each(error, this.showFormErrors, this);
+      }
+
+      this.trigger('form:submitted', attrs);
     },
 
     showFormErrors: function(error) {
