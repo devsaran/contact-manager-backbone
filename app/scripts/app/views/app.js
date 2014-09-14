@@ -27,9 +27,10 @@ define([
           this.$el.html(editContactsView.render().$el);
 
           editContactsView.on('form:submitted', function(attrs) {
-            contact.set(attrs);
-            contact.save();
-            App.router.navigate('', true);
+            var modelError = contact.save(attrs, {validate:true});
+            if(modelError !== false) {
+              App.router.navigate('', true);
+            }
           });
 
         } else {
@@ -40,10 +41,12 @@ define([
 
           createContactsView.on('form:submitted', function(attrs) {
             attrs.id = this.collection.isEmpty() ? 1 : (_.max(this.collection.pluck('id')) + 1);
-            var newContact = new ContactModel(attrs);
-            this.collection.add(newContact);
-            newContact.save();
-            App.router.navigate('', true);
+            var newContact = new ContactModel();
+            var modelError = newContact.save(attrs, {validate:true});
+            if(modelError !== false) {
+              this.collection.add(newContact);
+              App.router.navigate('', true);
+            }
           }, this);
         }
       }

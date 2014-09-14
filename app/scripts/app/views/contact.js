@@ -26,6 +26,7 @@ define([
 
     onClickContactDelete: function(e) {
       e.preventDefault();
+      this.model.collection.remove(this.model);
       this.model.destroy();
     }
   });

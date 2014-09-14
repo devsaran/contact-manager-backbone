@@ -8,11 +8,19 @@ define([
   var EditContactView = Backbone.View.extend({
     template: Templates['contactEdit'],
 
+    initialize: function() {
+      this.listenTo(this.model, 'invalid', function(model, error, options) {
+        this.cleanFormErrors();
+        _.each(error, this.showFormErrors, this);
+      });
+    },
+
     events: {
-      'submit .contract-form': 'onFormSubmit'
+      'submit .contact-form': 'onFormSubmit'
     },
 
     render: function() {
+      this.$el.empty();
       var html = this.template(_.extend(this.model.toJSON(), {
         isNew: this.model.isNew()
       }));
@@ -28,6 +36,15 @@ define([
         phone: this.$('.contact-phone-input').val(),
         email: this.$('.contact-email-input').val()
       });
+    },
+
+    showFormErrors: function(error) {
+      this.$('.form-group-' + error.name).addClass('has-error').find('.help-block').html(error.message);
+    },
+
+    cleanFormErrors: function() {
+      this.$('.form-group').removeClass('has-error');
+      this.$('.help-block').html('');
     }
   });
 
