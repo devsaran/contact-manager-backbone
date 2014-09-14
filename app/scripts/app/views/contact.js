@@ -7,7 +7,7 @@ define([
 
   var ContactView = Backbone.View.extend({
     tagName: 'li',
-    className: 'media col-md-6 col-lg-4',
+    className: 'media col-md-3 col-sm-4',
     template: Templates['contact'],
 
     events: {

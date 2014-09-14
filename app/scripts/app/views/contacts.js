@@ -10,15 +10,41 @@ define([
     template: Templates['contacts'],
 
     initialize: function() {
-      this.listenTo(this.collection, 'remove', this.render)
+      this.listenTo(this.collection, 'remove', this.render);
+      this.$el.html(this.template);
+
+      this.contactsContainer = this.$('.contacts-container');
+      this.emptyContactsPlaceholder = this.$('.empty-contacts-placeholder');
+      this.emptySearchPlaceholder = this.$('.empty-search-contacts-placeholder');
+    },
+
+    events: {
+      'keyup .contact-name-search': 'searchContacts'
+    },
+
+    searchContacts: function(e) {
+      var searchTerm = $.trim(this.$('.contact-name-search').val());
+      if(searchTerm) {
+        var filterd = this.collection.search(searchTerm);
+        if(filterd.length) {
+          this.contactsContainer.empty();
+          this.emptySearchPlaceholder.empty();
+          _.each(filterd, this.renderOne, this);
+        } else {
+          this.contactsContainer.empty();
+          this.emptySearchPlaceholder.html('<div class="well text-center"><h3>There is no contacts starting with <strong>' + searchTerm + '</strong></h3></div>');
+        }
+      } else {
+        this.render();
+      }
     },
 
     render: function() {
-      this.$el.html(this.template);
+      this.contactsContainer.empty();
       if(this.collection.length) {
         this.collection.each(this.renderOne, this);
       } else {
-        this.$('.empty-contacts-placeholder').html('<div class="well text-center"><h3>There is no contacts</h3></div>');
+        this.emptyContactsPlaceholder.html('<div class="well text-center"><h3>There is no contacts</h3></div>');
       }
 
       return this;
@@ -26,7 +52,7 @@ define([
 
     renderOne: function(contact) {
       var contactView = new ContactView({model: contact});
-      this.$('.contacts-container').append(contactView.render().$el);
+      this.contactsContainer.append(contactView.render().$el);
     }
   });
 
