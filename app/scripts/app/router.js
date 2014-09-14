@@ -41,7 +41,7 @@ define([
         if(modelError !== false) {
           this.collection.add(newContact);
           newContact.save();
-          App.router.navigate('', true);
+          App.router.navigate('home', true);
         }
       }, this);
 

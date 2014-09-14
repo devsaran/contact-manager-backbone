@@ -1,23 +1,26 @@
-contact-manager-backbone
+Backbone Contact Manager using RequireJS
 ========================
 
-Contact Manager using Backbone.js, Localstorage, RequireJS, Handlebar and Bootstrap.
+Contact Manager using Backbone.js, Localstorage, RequireJS, Handlebar and Bootstrap. Features of this app are client side data storage (localstorage), form validations, search functionality, using RequireJS, page transitions and clean code. http://www.devsaran.com/project/contact-manager-using-backbonejs
 
+## Library used
 
-##[Online demo](http://devsaran.github.io/contact-manager-backbone/)
+1. Backbone
+2. Yeoman workflow (along with Grunt task runner and bower)
+3. Backbone Localstorage
+4. RequireJS
+5. Handlebar
+6. SASS Bootstrap
+
+## [Online demo](http://devsaran.github.io/contact-manager-backbone/)
 
 ## Installation
 
 1. Clone this repository
-
 2. Install [Node.js](http://nodejs.org/) and [NPM](http://npmjs.org/)
-
 3. Install Grunt-cli and bower
-
 4. Install Yeoman
-
 5. Install components: 'npm install' or 'bower install'
-
 6. Run 'grunt serve'
 
 

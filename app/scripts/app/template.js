@@ -10,7 +10,7 @@ define([
         '<a href="#contacts/new" class="btn btn-lg btn-outline">Add Contact</a>',
       '</div>',
       '<div class="text-center col-sm-6">',
-        '<input type="text" class="form-control contact-name-search pull-left" placeholder="Search">',
+        '<input type="text" class="form-control contact-name-search" placeholder="Search">',
       '</div>',
     '</div>',
     '<ul class="media-list row contacts-container"></ul>',

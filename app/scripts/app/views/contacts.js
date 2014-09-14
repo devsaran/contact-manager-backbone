@@ -32,7 +32,7 @@ define([
           _.each(filterd, this.renderOne, this);
         } else {
           this.contactsContainer.empty();
-          this.emptySearchPlaceholder.html('<div class="well text-center"><h3>There is no contacts starting with <strong>' + searchTerm + '</strong></h3></div>');
+          this.emptySearchPlaceholder.html('<div class="well text-center"><h3>There is no contacts starting with <strong>' + searchTerm + '.</strong></h3></div>');
         }
       } else {
         this.render();
@@ -44,7 +44,7 @@ define([
       if(this.collection.length) {
         this.collection.each(this.renderOne, this);
       } else {
-        this.emptyContactsPlaceholder.html('<div class="well text-center"><h3>There is no contacts</h3></div>');
+        this.emptyContactsPlaceholder.html('<div class="well text-center"><h3>There is no contacts.</h3> <a href="#contacts/new" class="btn btn-lg btn-outline">Add Contact</a></div>');
       }
 
       return this;

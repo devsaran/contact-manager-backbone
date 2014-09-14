@@ -36,11 +36,14 @@ define([
         phone: this.$('.contact-phone-input').val(),
         email: this.$('.contact-email-input').val()
       };
-        
+
       if(this.model.isNew()) {
         var error = this.model.validate(attrs);
-        this.cleanFormErrors();
-        _.each(error, this.showFormErrors, this);
+        if(error) {
+          this.cleanFormErrors();
+          _.each(error, this.showFormErrors, this);
+          return;
+        }
       }
 
       this.trigger('form:submitted', attrs);
@@ -55,7 +58,8 @@ define([
       this.$('.help-block').html('');
     },
 
-    onFormClose: function() {
+    onFormClose: function(e) {
+      e.preventDefault();
       this.trigger('form:close');
     }
   });
