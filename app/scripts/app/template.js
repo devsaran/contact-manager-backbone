@@ -63,7 +63,7 @@ define([
             '<small class="help-block"></small>',
           '</div>',
         '</div>',
-        '<div class="form-group has-feedback">',
+        '<div class="form-group">',
           '<div class="col-sm-offset-4 col-sm-3">',
             '<button type="submit" class="btn btn-outline btn-lg btn-block">Submit</button>',
           '</div>',

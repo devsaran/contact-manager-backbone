@@ -7,10 +7,8 @@ define([
 
   var initialize = function() {
     var contactsCollections = new ContactsCollection();
-    var appView = new AppView({
-      collection: contactsCollections
-    });
-    App.router = new Router(appView);
+    var appView = new AppView();
+    App.router = new Router({view: appView, collection: contactsCollections});
     Backbone.history.start();
   };
 
