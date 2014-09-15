@@ -1,14 +1,15 @@
 Backbone Contact Manager using RequireJS
 ========================
 
-Contact Manager using Backbone.js, Localstorage, RequireJS, Handlebar and Bootstrap. Features of this app are client side data storage (localstorage), form validations, search functionality, using RequireJS, page transitions and clean code. http://www.devsaran.com/project/contact-manager-using-backbonejs
+Contact Manager using Backbone.js, Localstorage, RequireJS, Handlebar and Bootstrap. Features of this Contact Manager app are client side data storage (localstorage), form validations, search functionality, using RequireJS, page transitions and clean code. 
+http://www.devsaran.com/project/contact-manager-using-backbonejs
 
 ## Library used
 
 1. Backbone
-2. Yeoman workflow (along with Grunt task runner and bower)
-3. Backbone Localstorage
-4. RequireJS
+2. Backbone Localstorage
+3. RequireJS
+4. Yeoman workflow (along with Grunt task runner and bower)
 5. Handlebar
 6. SASS Bootstrap
 

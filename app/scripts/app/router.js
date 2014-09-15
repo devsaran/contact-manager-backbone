@@ -18,10 +18,10 @@ define([
     initialize: function(options) {
       this.appView = options.view;
       this.collection = options.collection;
+      this.collection.fetch();
     },
 
     home: function() {
-      this.collection.fetch();
       var contactsView = new ContactsView({
         collection: this.collection
       });
