@@ -2,7 +2,6 @@ Backbone Contact Manager using RequireJS
 ========================
 
 Contact Manager using Backbone.js, Localstorage, RequireJS, Handlebar and Bootstrap. Features of this Contact Manager app are client side data storage (localstorage), form validations, search functionality, using RequireJS, page transitions and clean code. 
-http://www.devsaran.com
 
 ## Library used
 
@@ -28,4 +27,4 @@ http://www.devsaran.com
 
 Copyright (c) 2014 Pradeep Saran. All rights reserved.
 
-Developed by [Devsaran](http://www.devsaran.com)
+Developed by [Devsaran](http://www.devsaran.com) and [239 Listing Real Estate](http://www.239listing.com)
